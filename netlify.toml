@@ -1,0 +1,11 @@
+[build]
+  publish = "static-site"
+  command = "yarn build"
+  functions = "functions"
+
+[dev]
+  functions = "functions-dev"
+
+[[redirects]]
+  from = "/hello/*"
+  to = "/.netlify/functions/hello-dev:splat"
