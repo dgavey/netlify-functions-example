@@ -5,10 +5,9 @@
     "scripts": {
       "build": "NODE_ENV=production npm-run-all build:*",
       "build:static": "eleventy",
-      "build:functions-install-dependencies": "cd functions-dev; for i in */; do cd ${i%/}; yarn; cd ..; done; cd ..;",
-      "build:zip-functions": "cd functions-dev; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done; cd ..;",
+      "build:functions-install-dependencies": "cd functions-dev; for i in */; do cd ${i%/}; yarn; cd ..; done;",
+      "build:zip-functions": "cd functions-dev; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done;",
       "build:copy-single-functions": "cp ./functions-dev/*.js ./functions",
-    
       "dev": "eleventy --serve --quiet"
     },
     "devDependencies": {
