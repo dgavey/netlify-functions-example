@@ -1,0 +1,18 @@
+{
+    "name": "netlify-functions-demo",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+      "build": "npm-run-all build:*",
+      "build:static": "eleventy",
+      "build:zip-api": "cd functions-dev; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done; cd ..;",
+      "build:copy-singles": "cp ./functions-dev/*.js ./functions",
+    
+      "dev": "eleventy --serve --quiet"
+    },
+    "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "npm-run-all": "^4.1.5"
+    }
+  }
+  

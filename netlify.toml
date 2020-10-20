@@ -1,11 +1,14 @@
 [build]
-  publish = "static-site"
+  publish = "dist"
   command = "yarn build"
   functions = "functions"
 
 [dev]
   functions = "functions-dev"
+  command = "yarn dev"
 
 [[redirects]]
   from = "/hello/*"
-  to = "/.netlify/functions/hello-dev:splat"
+  to = "/.netlify/functions/hello-dev/:splat"
+  status = 200
+  force = true  

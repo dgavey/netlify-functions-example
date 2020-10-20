@@ -2,7 +2,7 @@
 const api = require('lambda-api')()
 
 // Define a route
-api.get('/hello', async (req,res) => {
+api.get('/hello/', async (req,res) => {
     return { text: 'Hello Dev.to from Lambda API' }
   })
 

@@ -1,7 +1,7 @@
 {
   "name": "hello-dev",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "hello-dev.js",
   "license": "MIT",
   "devDependencies": {
     "aws-sdk": "^2.773.0"
