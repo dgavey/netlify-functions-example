@@ -5,7 +5,8 @@
     "scripts": {
       "build": "npm-run-all build:*",
       "build:static": "eleventy",
-      "build:zip-api": "cd functions-dev; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done; cd ..;",
+      "build:functions-install-dependencies": "cd functions-dev; for i in */; do cd ${i%/}; yarn; cd ..; done; cd ..;",
+      "build:zip-functions": "cd functions-dev; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done; cd ..;",
       "build:copy-singles": "cp ./functions-dev/*.js ./functions",
     
       "dev": "eleventy --serve --quiet"
